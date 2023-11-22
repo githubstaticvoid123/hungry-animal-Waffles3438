@@ -13,23 +13,11 @@ public class Starfish extends Actor
         // Add your action code here.
         if(Greenfoot.isKeyDown("d"))
         {
-            move(1);
+            move(3);
         }
         else if(Greenfoot.isKeyDown("a"))
         {
-            move(-1);
-        }
-        else if(Greenfoot.isKeyDown("w"))
-        {
-            turn(-90);
-            move(1);
-            turn(90);
-        }
-        else if(Greenfoot.isKeyDown("s"))
-        {
-            turn(-90);
-            move(-1);
-            turn(90);
+            move(-3);
         }
     }
 }
