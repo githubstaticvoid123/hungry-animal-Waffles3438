@@ -17,11 +17,9 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        Amongus red = new Amongus();
         Starfish star = new Starfish();
-        Bluesus blue = new Bluesus();
-        addObject(star, 300, 200);
-        addObject(red, 100, 200);
-        addObject(blue, 200, 500);
+        Bread bread = new Bread();
+        addObject(star, 300, 350);
+        addObject(bread, 300, 1);
     }
 }
