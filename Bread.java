@@ -18,7 +18,9 @@ public class Bread extends Actor
         // Add your action code here.
         if(!isAtEdge())
         {
+            turn(90);
             move(1);
+            turn(-90);
         }
     }
 }
