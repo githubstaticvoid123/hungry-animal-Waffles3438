@@ -18,11 +18,23 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        Random rand = new Random(); 
-        int x = rand.nextInt(600); 
+        
+        // creates starfish
         Starfish star = new Starfish();
-        Bread bread = new Bread();
         addObject(star, 300, 350);
+        
+        // create a lable
+        Label scoreLabel = new Label("Score: ", 40);
+        addObject(scoreLabel, 60, 20);
+        
+        // creates bread
+        createBread();
+    }
+    
+    public void createBread()
+    {
+        Bread bread = new Bread();
+        int x = Greenfoot.getRandomNumber(600);
         addObject(bread, x, 1);
     }
 }

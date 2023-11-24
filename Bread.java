@@ -19,7 +19,7 @@ public class Bread extends Actor
         if(!isAtEdge())
         {
             turn(90);
-            move(1);
+            move(2);
             turn(-90);
         }
 
