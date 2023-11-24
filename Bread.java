@@ -15,13 +15,19 @@ public class Bread extends Actor
 
     public void act()
     {
-        // Add your action code here.
+        // apple goes down
         if(!isAtEdge())
         {
             turn(90);
-            move(1);
+            move(2);
             turn(-90);
         }
-
+        
+        MyWorld world = (MyWorld) getWorld();
+        if(isAtEdge())
+        {
+            world.gameOver();
+            world.removeObject(this);
+        }
     }
 }

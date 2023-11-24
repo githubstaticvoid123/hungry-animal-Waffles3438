@@ -9,7 +9,8 @@ import java.util.Random;
  */
 public class MyWorld extends World
 {
-
+    public int score = 0;
+    Label scoreLabel;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -18,11 +19,35 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        Random rand = new Random(); 
-        int x = rand.nextInt(600); 
+        
+        // creates starfish
         Starfish star = new Starfish();
-        Bread bread = new Bread();
         addObject(star, 300, 350);
+        
+        // create a label
+        scoreLabel = new Label("Score: " + score, 40);
+        addObject(scoreLabel, 65, 20);
+        
+        // creates bread
+        createBread();
+    }
+    
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue("Score: " + score);
+    }
+    
+    public void createBread()
+    {
+        Bread bread = new Bread();
+        int x = Greenfoot.getRandomNumber(600);
         addObject(bread, x, 1);
     }
 }
