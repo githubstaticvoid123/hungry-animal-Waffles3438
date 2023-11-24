@@ -22,6 +22,7 @@ public class Starfish extends Actor
         
         // remove bread if starfish touches it
         eat();
+
     }
     
     // Eats apple and spawns new apple
@@ -32,6 +33,7 @@ public class Starfish extends Actor
             removeTouching(Bread.class);
             MyWorld world = (MyWorld) getWorld();
             world.createBread();
+            world.increaseScore();
         }
     }
 }

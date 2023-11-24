@@ -9,7 +9,8 @@ import java.util.Random;
  */
 public class MyWorld extends World
 {
-
+    public int score = 0;
+    Label scoreLabel;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -23,12 +24,18 @@ public class MyWorld extends World
         Starfish star = new Starfish();
         addObject(star, 300, 350);
         
-        // create a lable
-        Label scoreLabel = new Label("Score: ", 40);
-        addObject(scoreLabel, 60, 20);
+        // create a label
+        scoreLabel = new Label("Score: " + score, 40);
+        addObject(scoreLabel, 65, 20);
         
         // creates bread
         createBread();
+    }
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue("Score: " + score);
     }
     
     public void createBread()
