@@ -10,6 +10,8 @@ import java.util.Random;
 public class MyWorld extends World
 {
     public int score = 0;
+    public int x = 600;
+    public int y = 400;
     Label scoreLabel;
     /**
      * Constructor for objects of class MyWorld.
@@ -18,15 +20,16 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+
         super(600, 400, 1);
-        
+ 
         // creates starfish
-        Starfish star = new Starfish();
-        addObject(star, 300, 350);
+        Elephant elephant = new Elephant();
+        addObject(elephant, 300, 325);
         
         // create a label
         scoreLabel = new Label("Score: " + score, 40);
-        addObject(scoreLabel, 65, 20);
+        addObject(scoreLabel, x/2, 20);
         
         // creates bread
         createBread();
@@ -35,7 +38,7 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        addObject(gameOverLabel, x/2, y/2);
     }
     
     public void increaseScore()

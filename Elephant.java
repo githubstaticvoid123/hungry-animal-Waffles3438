@@ -1,14 +1,34 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Starfish here.
+ * Write a description of class Elephant here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Starfish extends Actor
+public class Elephant extends Actor
 {
     GreenfootSound eatFood = new GreenfootSound("eat.mp3");
+    GreenfootImage idle[] = new GreenfootImage[8];
+    
+    // Constructor
+    public Elephant()
+    {
+        for(int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+        }
+        setImage(idle[0]);
+    }
+    
+    // Animating elephant
+    int imageIndex = 0;
+    public void animateElephant()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     public void act()
     {
         // Add your action code here.
@@ -23,7 +43,9 @@ public class Starfish extends Actor
         
         // remove bread if starfish touches it
         eat();
-
+        
+        // animate elephant
+        animateElephant();
     }
     
     // Eats apple and spawns new apple
