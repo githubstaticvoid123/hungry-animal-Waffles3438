@@ -1,18 +1,34 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Amongus here.
+ * Write a description of class Elephant here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Amongus extends Actor
+public class Elephant extends Actor
 {
-    /**
-     * Act - do whatever the Amongus wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     GreenfootSound eatFood = new GreenfootSound("eat.mp3");
+    GreenfootImage idle[] = new GreenfootImage[8];
+    
+    // Constructor
+    public Elephant()
+    {
+        for(int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+        }
+        setImage(idle[0]);
+    }
+    
+    // Animating elephant
+    int imageIndex = 0;
+    public void animateElephant()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     public void act()
     {
         // Add your action code here.
@@ -27,7 +43,9 @@ public class Amongus extends Actor
         
         // remove bread if starfish touches it
         eat();
-
+        
+        // animate elephant
+        animateElephant();
     }
     
     // Eats apple and spawns new apple

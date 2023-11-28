@@ -24,8 +24,8 @@ public class MyWorld extends World
         super(600, 400, 1);
  
         // creates starfish
-        Amongus red = new Amongus();
-        addObject(red, 300, 325);
+        Elephant elephant = new Elephant();
+        addObject(elephant, 300, 325);
         
         // create a label
         scoreLabel = new Label("Score: " + score, 40);
