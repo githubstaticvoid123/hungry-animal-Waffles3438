@@ -1,13 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Starfish here.
+ * Write a description of class Amongus here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Starfish extends Actor
+public class Amongus extends Actor
 {
+    /**
+     * Act - do whatever the Amongus wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     GreenfootSound eatFood = new GreenfootSound("eat.mp3");
     public void act()
     {
