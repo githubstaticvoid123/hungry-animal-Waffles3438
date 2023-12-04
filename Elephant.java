@@ -81,7 +81,9 @@ public class Elephant extends Actor
         animateElephant();
     }
     
-    // Eats apple and spawns new apple
+    /**
+     * Eats apple and spawns new apple
+     */ 
     public void eat()
     {
         if(isTouching(Bread.class))

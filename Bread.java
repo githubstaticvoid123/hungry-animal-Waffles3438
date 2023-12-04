@@ -15,7 +15,7 @@ public class Bread extends Actor
 
     public void act()
     {
-        // apple goes down
+        // bread goes down
         if(!isAtEdge())
         {
             turn(90);
@@ -23,6 +23,7 @@ public class Bread extends Actor
             turn(-90);
         }
         
+        // removes bread when it touches the ground
         MyWorld world = (MyWorld) getWorld();
         if(isAtEdge())
         {

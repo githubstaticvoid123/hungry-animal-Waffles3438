@@ -35,18 +35,29 @@ public class MyWorld extends World
         createBread();
     }
     
+    
+    /**
+     * Ends game and shows game over title
+     */
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, x/2, y/2);
     }
     
+    
+    /**
+     * Increases score
+     */
     public void increaseScore()
     {
         score++;
         scoreLabel.setValue("Score: " + score);
     }
     
+    /**
+     * Creates a bread
+     */
     public void createBread()
     {
         Bread bread = new Bread();
