@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bread extends Actor
 {
+    int speed  = 2;
+    
     /**
      * Act - do whatever the Bread wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,7 +21,7 @@ public class Bread extends Actor
         if(!isAtEdge())
         {
             turn(90);
-            move(2);
+            move(speed);
             turn(-90);
         }
         
@@ -30,5 +32,11 @@ public class Bread extends Actor
             world.gameOver();
             world.removeObject(this);
         }
+    }
+    
+    public void setSpeed(int spd)
+    {
+        speed = spd;
+        System.out.println(speed);
     }
 }

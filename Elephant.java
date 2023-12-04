@@ -11,6 +11,7 @@ public class Elephant extends Actor
     GreenfootSound eatFood = new GreenfootSound("eat.mp3");
     GreenfootImage idleRight[] = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
+    int movementSpd = 5;
     
     // Direction the elephant is facing
     String facing = "right";
@@ -65,12 +66,12 @@ public class Elephant extends Actor
         // Add your action code here.
         if(Greenfoot.isKeyDown("d"))
         {
-            move(3);
+            move(movementSpd);
             facing = "right";
         }
         else if(Greenfoot.isKeyDown("a"))
         {
-            move(-3);
+            move(-movementSpd);
             facing = "left";
         }
         
