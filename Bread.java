@@ -29,11 +29,18 @@ public class Bread extends Actor
         MyWorld world = (MyWorld) getWorld();
         if(isAtEdge())
         {
-            world.gameOver();
+            world.createBread();
+            world.setHP(-1);
+            if(world.getHP() == 0)
+            {
+                world.gameOver();
+                world.removeObject(this);
+            }
             world.removeObject(this);
         }
     }
     
+    // sets the speed of the elephant
     public void setSpeed(int spd)
     {
         speed = spd;
