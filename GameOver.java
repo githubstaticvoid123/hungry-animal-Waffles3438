@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameOver extends World
 {
     Label totalScore;
+    Label playAgain;
     /**
      * Constructor for objects of class GameOver.
      * 
@@ -19,5 +20,12 @@ public class GameOver extends World
         super(600, 400, 1);
         totalScore = new Label("Your score: " + MyWorld.score, 40);
         addObject(totalScore, 300, 275);
+        playAgain = new Label("Press space to play again", 40);
+        addObject(playAgain, 300, 350);
+        if(Greenfoot.isKeyDown("space"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
     }
 }
