@@ -37,6 +37,5 @@ public class Bread extends Actor
     public void setSpeed(int spd)
     {
         speed = spd;
-        System.out.println(speed);
     }
 }

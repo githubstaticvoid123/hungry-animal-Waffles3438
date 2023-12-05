@@ -56,7 +56,7 @@ public class MyWorld extends World
         scoreLabel.setValue("Score: " + score);
         if(score % 5 == 0)
         {
-            level += 0.5;
+            level += 1;
         }
     }
     
@@ -67,7 +67,8 @@ public class MyWorld extends World
     {
         Bread bread = new Bread();
         bread.setSpeed(level);
-        int x = Greenfoot.getRandomNumber(600);
+        java.util.Random rand = new java.util.Random();
+        int x = rand.nextInt(32, 568);
         addObject(bread, x, 1);
     }
 }
