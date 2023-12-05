@@ -9,8 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Elephant extends Actor
 {
     GreenfootSound eatFood = new GreenfootSound("eat.mp3");
+    GreenfootSound walk = new GreenfootSound("stone.mp3");
     GreenfootImage idleRight[] = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
+    int movementSpd = 5;
     
     // Direction the elephant is facing
     String facing = "right";
@@ -31,6 +33,7 @@ public class Elephant extends Actor
             idleLeft[i].mirrorHorizontally();
             idleLeft[i].scale(64,64);
         }
+
         
         animationTimer.mark();
         
@@ -63,16 +66,25 @@ public class Elephant extends Actor
     public void act()
     {
         // Add your action code here.
-        if(Greenfoot.isKeyDown("d"))
+        if(Greenfoot.isKeyDown("d") && getX() <= 568)
         {
-            move(3);
+            move(movementSpd);
             facing = "right";
+            walk.setVolume(50);
+            walk.play();
         }
-        else if(Greenfoot.isKeyDown("a"))
+        else if(Greenfoot.isKeyDown("a") && getX() >= 32)
         {
-            move(-3);
+            move(-movementSpd);
             facing = "left";
+            walk.setVolume(50);
+            walk.play();
         }
+        else
+        {
+            walk.pause();
+        }
+        
         
         // remove bread if starfish touches it
         eat();
@@ -81,7 +93,9 @@ public class Elephant extends Actor
         animateElephant();
     }
     
-    // Eats apple and spawns new apple
+    /**
+     * Eats apple and spawns new apple
+     */ 
     public void eat()
     {
         if(isTouching(Bread.class))
