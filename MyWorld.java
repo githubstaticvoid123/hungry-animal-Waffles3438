@@ -72,8 +72,8 @@ public class MyWorld extends World
         Bread bread = new Bread();
         bread.setSpeed(level);
         java.util.Random rand = new java.util.Random();
-        int x = rand.nextInt(32, 568);
-        addObject(bread, x, 1);
+        int x = Greenfoot.getRandomNumber(567);
+        addObject(bread, x + 32, 1);
     }
     
     /**
