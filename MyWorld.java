@@ -104,7 +104,7 @@ public class MyWorld extends World
     /**
      * Sets score
      */
-    public static int setScore(int a)
+    public static void setScore(int a)
     {
         score = a;
     }
