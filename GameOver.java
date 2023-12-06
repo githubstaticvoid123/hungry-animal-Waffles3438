@@ -14,11 +14,11 @@ public class GameOver extends World
      * Constructor for objects of class GameOver.
      * 
      */
-    public GameOver()
+    public GameOver(int score)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        totalScore = new Label("Your score: " + MyWorld.score, 40);
+        totalScore = new Label("Your score: " + score, 40);
         addObject(totalScore, 300, 300);
         playAgain = new Label("Press space to play again", 40);
         addObject(playAgain, 300, 350);
@@ -29,8 +29,8 @@ public class GameOver extends World
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
+            Titlescreen titlescreen = new Titlescreen();
+            Greenfoot.setWorld(titlescreen);
         }
     }
 }

@@ -12,9 +12,9 @@ public class MyWorld extends World
     public static int score = 0;
     public int x = 600;
     public int y = 400;
-    public int hp = 3;
+    public static int hp = 0;
     int level = 1;
-    Label lives;
+    static Label lives;
     Label scoreLabel;
     /**
      * Constructor for objects of class MyWorld.
@@ -46,7 +46,7 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
-        GameOver gameOver = new GameOver();
+        GameOver gameOver = new GameOver(score);
         Greenfoot.setWorld(gameOver);
     }
     
@@ -77,11 +77,20 @@ public class MyWorld extends World
     }
     
     /**
-     * Sets lives
+     * Change lives
      */
-    public void setHP(int a)
+    public static void setHP(int a)
     {
         hp = hp + a;
+        lives.setValue("Lives: " + hp);
+    }
+    
+    /**
+     * Set lives
+     */
+    public static void HP(int a)
+    {
+        hp = a;
         lives.setValue("Lives: " + hp);
     }
     
@@ -102,7 +111,7 @@ public class MyWorld extends World
     }
     
     /**
-     * Set score
+     * Sets score
      */
     public static void setScore(int a)
     {

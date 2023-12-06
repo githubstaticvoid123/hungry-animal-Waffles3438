@@ -25,10 +25,23 @@ public class Titlescreen extends World
     public void act()
     {
         // Starts game when user presses the space bar
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("1"))
         {
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
+            MyWorld.HP(3);
+        }
+        if(Greenfoot.isKeyDown("2"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+            MyWorld.HP(2);
+        }
+        if(Greenfoot.isKeyDown("3"))
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+            MyWorld.HP(1); 
         }
     }
     
@@ -45,7 +58,7 @@ public class Titlescreen extends World
         elephant.setLocation(getWidth()/2,183);
         Label label2 = new Label("Elephant", 75);
         addObject(label2,getWidth()/2,67);
-        Label label3 = new Label("Press space to start", 30);
+        Label label3 = new Label("Press 1 for easy, 2 for medium and 3 for hard", 30);
         addObject(label3,getWidth()/2,338);
     }
 }
