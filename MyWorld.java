@@ -100,4 +100,12 @@ public class MyWorld extends World
     {
         return score;
     }
+    
+    /**
+     * Set score
+     */
+    public static void setScore(int a)
+    {
+        score = a;
+    }
 }
