@@ -22,7 +22,7 @@ public class GameOver extends World
         addObject(totalScore, 300, 300);
         playAgain = new Label("Press space to play again", 40);
         addObject(playAgain, 300, 350);
-        Myworld.setScore(0);
+        MyWorld.setScore(0);
     }
     
     public void act()
