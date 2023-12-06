@@ -86,7 +86,7 @@ public class MyWorld extends World
     }
     
     /**
-     * Set lives
+     * Sets lives
      */
     public static void HP(int a)
     {
