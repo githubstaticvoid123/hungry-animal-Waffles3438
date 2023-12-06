@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bread extends Actor
 {
-    int speed  = 2;
+    public static int speed = 100;
     
     /**
      * Act - do whatever the Bread wants to do. This method is called whenever
@@ -40,8 +40,10 @@ public class Bread extends Actor
         }
     }
     
-    // sets the speed of the elephant
-    public void setSpeed(int spd)
+    /**
+     * Sets speed of bread
+     */
+    public static void setSpeed(int spd)
     {
         speed = spd;
     }
