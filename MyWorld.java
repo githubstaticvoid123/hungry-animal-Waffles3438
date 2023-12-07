@@ -38,6 +38,7 @@ public class MyWorld extends World
         
         // creates bread
         createBread();
+        createBadBread(); 
     }
     
     
@@ -75,6 +76,16 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(567);
         addObject(bread, x + 32, 1);
     }
+    
+    public void createBadBread()
+    {
+        int x = Greenfoot.getRandomNumber(600); 
+        int y = 0; 
+        BadBread badBread = new BadBread(); 
+        addObject(badBread, x, y); 
+        
+    }
+    
     
     /**
      * Change lives

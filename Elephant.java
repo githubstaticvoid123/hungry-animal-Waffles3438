@@ -88,6 +88,7 @@ public class Elephant extends Actor
         
         // remove bread if starfish touches it
         eat();
+        badEat(); 
         
         // animate elephant
         animateElephant();
@@ -107,5 +108,15 @@ public class Elephant extends Actor
             eatFood.setVolume(50);
             eatFood.play();
         }
+    }
+    
+    public void badEat()
+    {
+        if(isTouching(BadBread.class)){
+            removeTouching(BadBread.class); 
+            MyWorld world = (MyWorld) getWorld(); 
+            world.gameOver(); 
+            world.removeObject(this);
+    }
     }
 }
